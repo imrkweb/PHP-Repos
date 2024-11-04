@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-Project Architecture:
+Application Architecture:
 
 - Main.dart: The file contains front end UI including App Bar and body which reposible for displaying data from the local database.
 - we have services folder, in the folder we have db_service and api_service files. db_service responsible for the local database creation, insertion, deletion of the table data. api_service is responsible for the API data that is coming from the GitHub API.
