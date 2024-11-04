@@ -18,7 +18,8 @@ App UI:
 App installation: 
 
 - Firstly, enable the unknown source, for that open your settings in your android and search unknown source. enable the “Install unknown Apps”.
-- go to the folder, there is a file called flutter_build.apk, download and install manually into android.
+- go to the folder, there is a file called app-release.apk, download and install manually into android. if there is no app please run the following command on termainal for the apk file flutter build apk --release
+after that you can check in the following directory <your_flutter_project>/build/app/outputs/flutter-apk/app-release.apk for the APK to install on your device.
 
 This project is a starting point for a Flutter application.
 
