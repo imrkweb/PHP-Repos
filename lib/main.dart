@@ -93,15 +93,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       subtitle: Column(
                         children: [
-                          Text(
-                            'About: ${repo.description}',
-                            style: const TextStyle(fontWeight: FontWeight.w500),
-                          ),
                           Text('Stars: ${repo.stargazersCount}'),
-                          Text('Created At: ${repo.createdAt}'),
+                          Text('Pushed At: ${repo.pushedAt}'),
                           Text('URL: ${repo.url}'),
                         ],
                       ),
+                      onTap: () {
+                        _showDialog(
+                          context,
+                          repo.createdAt,
+                          repo.description,
+                        );
+                      },
                     ),
                   );
                 },
@@ -110,4 +113,29 @@ class _HomeScreenState extends State<HomeScreen> {
           }),
     );
   }
+}
+
+void _showDialog(BuildContext context, String createdAt, String description) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Created At: $createdAt',
+                style: const TextStyle(fontWeight: FontWeight.w500),
+              ),
+              Text(
+                'Description: $description',
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
 }
